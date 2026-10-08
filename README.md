@@ -4,6 +4,10 @@ Open Bench is a crowd-sourced map of adult changing tables: full-size benches in
 
 The name lives in one file, [`src/config/site.ts`](src/config/site.ts). Change `name` there (keep it a single-line double-quoted string) and rebuild. The HTML title, description, and theme color are read from that file.
 
+## Live site
+
+[https://vivianwanjiku-lab.github.io/open-bench/](https://vivianwanjiku-lab.github.io/open-bench/)
+
 Listings on the public map are **sample data**. They use fictional venue names and addresses, and every map, list, and detail view says so. Do not travel to them. Search engines are asked not to index the site while `showSampleData` is `true`.
 
 ## Run locally
@@ -65,9 +69,24 @@ The production build is a static `dist/` folder.
 
 - **Netlify:** [`netlify.toml`](netlify.toml) builds the site and rewrites routes to `index.html`.
 - **Vercel:** [`vercel.json`](vercel.json) rewrites all paths to `index.html`. Use the Vite preset.
-- **GitHub Pages:** For a project site, set `base` in [`vite.config.ts`](vite.config.ts) to `"/your-repo/"`. `npm run build` adds `dist/404.html`, which Pages uses for client-side routes. Upload `dist`, or deploy that folder with an action. A user or organization site served from `/` can keep `base` as `/`.
+- **GitHub Pages:** see [Deploying to GitHub Pages](#deploying-to-github-pages).
 
 Map tiles and unmatched place searches call OpenStreetMap. The host must allow those requests in the browser.
+
+## Deploying to GitHub Pages
+
+Pages for this repository is served from GitHub Actions at [https://vivianwanjiku-lab.github.io/open-bench/](https://vivianwanjiku-lab.github.io/open-bench/). [`.github/workflows/deploy-pages.yml`](.github/workflows/deploy-pages.yml) runs on every push to `main` and when started by hand. It installs dependencies, runs the tests, builds with `GITHUB_PAGES=true` (Vite `base` `/open-bench/`), and deploys `dist/`.
+
+`npm run build` copies `index.html` to `dist/404.html`. GitHub Pages returns that file for paths that are not real files, so a refresh of `/open-bench/stations/nbo-marula` still loads the app.
+
+`npm run dev` keeps the base at `/`. To preview the Pages build locally:
+
+```bash
+GITHUB_PAGES=true npm run build
+GITHUB_PAGES=true npm run preview
+```
+
+Then open [http://127.0.0.1:4317/open-bench/](http://127.0.0.1:4317/open-bench/). Set `BASE_PATH` instead of `GITHUB_PAGES` if you need a different subpath.
 
 ## Contact and rename
 

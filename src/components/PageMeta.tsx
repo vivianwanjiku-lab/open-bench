@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import { site } from "@/config/site";
+import { publicPath } from "@/lib/publicPath";
 
 function setMeta(attribute: "name" | "property", key: string, content: string) {
   let element = document.head.querySelector(`meta[${attribute}="${key}"]`);
@@ -32,7 +33,7 @@ export function PageMeta({
     setMeta("name", "twitter:description", pageDescription);
     setMeta("name", "robots", site.showSampleData ? "noindex, nofollow" : "index, follow");
     if (typeof window !== "undefined") {
-      setMeta("property", "og:url", new URL(path, window.location.origin).toString());
+      setMeta("property", "og:url", new URL(publicPath(path), window.location.origin).toString());
     }
   }, [title, description, path]);
   return null;

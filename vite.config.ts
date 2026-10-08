@@ -7,6 +7,17 @@ import { defineConfig, type Plugin } from "vite";
 
 const root = fileURLToPath(new URL(".", import.meta.url));
 
+/** Project Pages site is /open-bench/. Dev and other hosts stay at /. */
+function siteBase(): string {
+  const configured = process.env.BASE_PATH?.trim();
+  if (configured) {
+    if (configured === "/") return "/";
+    const withLeading = configured.startsWith("/") ? configured : `/${configured}`;
+    return withLeading.endsWith("/") ? withLeading : `${withLeading}/`;
+  }
+  return process.env.GITHUB_PAGES ? "/open-bench/" : "/";
+}
+
 function readSiteSource(): string {
   return readFileSync(new URL("./src/config/site.ts", import.meta.url), "utf8");
 }
@@ -63,6 +74,7 @@ function escapeHtml(value: string): string {
 }
 
 export default defineConfig({
+  base: siteBase(),
   plugins: [react(), tailwindcss(), siteHtml()],
   resolve: {
     alias: {
