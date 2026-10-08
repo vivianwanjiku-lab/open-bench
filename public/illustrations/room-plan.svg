@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" fill="none">
+  <rect width="800" height="600" fill="#F6F1E8"/>
+  <rect x="120" y="70" width="560" height="460" rx="8" fill="#FFFCF8" stroke="#0E5C58" stroke-width="8"/>
+  <path d="M120 180h70" stroke="#0E5C58" stroke-width="8"/>
+  <path d="M190 180a70 70 0 0 1 70 70" stroke="#8C7764" stroke-width="4" stroke-dasharray="8 8"/>
+  <rect x="180" y="110" width="220" height="70" rx="8" fill="#0E5C58"/>
+  <text x="210" y="152" fill="#F6F1E8" font-family="Georgia, serif" font-size="24">Bench</text>
+  <path d="M200 100h180" stroke="#C24D36" stroke-width="6" stroke-dasharray="10 8"/>
+  <text x="200" y="96" fill="#8D3424" font-family="Georgia, serif" font-size="18">Hoist track</text>
+  <rect x="520" y="360" width="110" height="120" rx="8" fill="#E4F2F0" stroke="#0E5C58" stroke-width="4"/>
+  <text x="540" y="428" fill="#083E3B" font-family="Georgia, serif" font-size="20">Toilet</text>
+  <rect x="180" y="400" width="90" height="50" rx="6" fill="#EFE4D4" stroke="#8C7764" stroke-width="3"/>
+  <text x="196" y="430" fill="#1A2C2A" font-family="Georgia, serif" font-size="18">Sink</text>
+  <circle cx="400" cy="340" r="70" stroke="#1F6B45" stroke-width="3" stroke-dasharray="6 6"/>
+  <text x="300" y="520" fill="#8D3424" font-family="Georgia, serif" font-size="22">Sample plan, not a survey</text>
+</svg>
