@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" fill="none">
+  <rect width="800" height="600" fill="#F6F1E8"/>
+  <rect x="60" y="50" width="680" height="500" rx="24" fill="#FFFCF8" stroke="#E4D7C8" stroke-width="4"/>
+  <rect x="160" y="340" width="400" height="56" rx="12" fill="#0E5C58"/>
+  <path d="M200 396v54M520 396v54" stroke="#083E3B" stroke-width="8" stroke-linecap="round"/>
+  <rect x="600" y="220" width="80" height="120" rx="8" fill="#E4F2F0" stroke="#0E5C58" stroke-width="6"/>
+  <text x="90" y="90" fill="#8D3424" font-family="Georgia, serif" font-size="28">Sample drawing</text>
+  <text x="160" y="300" fill="#3A4F4C" font-family="Georgia, serif" font-size="24">No hoist in this drawing</text>
+</svg>
